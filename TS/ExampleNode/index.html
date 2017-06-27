@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./Customer.js"></script>
+</head>
+<body>
+	<script>
+		var cust = new Customer;
+		cust.name='kkk';
+		console.log(cust);
+
+		cust = new SomeOtherCustomer();
+		cust.name="Ric";
+		console.log(cust);
+		cust.Validate();
+
+		try {
+			cust.name="";
+		} catch(e) {
+			console.log('Exception:',e);
+		}
+
+		cust._address=new Address();
+		cust.address.Street1="Hola";
+		console.log(cust);
+	</script>
+</body>
+</html>

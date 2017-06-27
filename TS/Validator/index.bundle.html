@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head><title>TypeScript Greeter</title></head>
+    <body>
+        <script src="jspm_packages/system.js"></script>
+	    <script src="config.js"></script>
+        <script src="out/build.js"></script>
+        <script>
+            System.import("scripts/Test.js").then(function (exports) {
+                console.log('exports:',exports);
+            });
+        </script>
+    </body>
+</html>

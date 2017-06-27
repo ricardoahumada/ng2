@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+    <script src="./scripts/clock.js"></script>
+</head>
+<body>
+    <div id="clock"></div>
+    <script>
+        (function (window, document) {    
+        console.log("Entra...");
+        var clock = new Clock();
+        clock.bindTo(document.getElementById("clock"));
+        clock.start();  
+    } (window, document));
+    </script>
+</body>
+</html>

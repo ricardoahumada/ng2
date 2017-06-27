@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jspm_packages/system.js"></script>
+	<script src="config.js"></script>
+	<script src="build.js"></script>
+</head>
+<body>
+	<script>
+
+		// System.import("./scripts/Customer.js").then(function (exports) {//Sin el build
+		System.import("Customer.js").then(function (exports) {
+			console.log(exports);
+			var cust = new exports.Customer();
+			cust.name='kkk';
+			console.log(cust);
+
+			cust.address.Street1="Hola2";
+			console.log(cust);
+		});
+
+		/**/
+	</script>
+</body>
+</html>
