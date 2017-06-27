@@ -1,0 +1,35 @@
+<div>
+	<h3>Lista de tareas</h3>
+	<input [(ngModel)]="textoafiltrar" placeholder="Filtra por descripción"><br><br>
+	
+	<table>
+		<tr>
+			<td>Id</td>
+			<td>Descripción</td>
+			<td>Duración</td>
+			<td>Proyecto</td>
+			<td>Borrar</td>
+		</tr>
+		<tr *ngFor="let tarea of tareas | listFilter : textoafiltrar:'descripcion'">
+			<td>{{tarea.tid}}</td>
+			<td>{{tarea.descripcion}}</td>
+			<td>{{tarea.tiempo}}</td>
+			<td>{{tarea.proyecto}}</td>
+			<td><boton-borrar [tid]="tarea.tid" (borrarClicked)="onBorrarClicked($event)"></boton-borrar></td>
+			<td><a [routerLink]="['/tareas', tarea.tid]">ver</a></td>
+		</tr>
+	</table>
+	<!-- <div class="row">
+		<h3>Nueva Tarea</h3>
+	    <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+	        <input type="text" [(ngModel)]="newTask.descripcion" name="descripcion" id="descripcion" #descripcion="ngModel" placeholder="Descripción" required  minlength="3" maxlength="30">
+	        <div [hidden]="descripcion.valid || descripcion.pristine"class="alert alert-danger">Descripción requerida</div>
+	        <br />
+	        <input type="number"  [(ngModel)]="newTask.tiempo" name="tiempo" placeholder="Duración" min="1"/><br />
+	        <input type="number" [(ngModel)]="newTask.proyecto" name="tiempo" placeholder="Proyecto"  min="1"/><br />
+	
+	        <button type="submit" [disabled]="!taskForm.form.valid">Enviar</button>
+	    </form>
+	    <pre>{{newTask|json}}</pre>
+	</div> -->
+</div>
