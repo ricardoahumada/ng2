@@ -6,12 +6,7 @@ import { Tarea } from '../modelos/tarea';
 
 @Injectable()
 export class TareasService {
-	private _tareas:Tarea[];/*[
-		new Tarea(1,'Tarea1',2,1),
-		new Tarea(2,'Tarea2',10,2),
-		new Tarea(3,'Tarea3',22,3),
-		new Tarea(4,'Tarea4',45,2)
-	];*/
+	private _tareas:Tarea[];
 	
 	private _observable: Observable<any>;
 

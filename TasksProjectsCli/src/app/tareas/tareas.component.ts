@@ -7,18 +7,12 @@ import { ListFilterPipe } from '../commons/filter.pipe';
 
 @Component({
   selector: 'tareas',
-  templateUrl: './tareas.component.html'/*,
-  providers:[TareasService]*/
+  templateUrl: './tareas.component.html'
 })
 
 export class TareasComponent{
 	
-	tareas:Tarea[];/*=[
-		new Tarea(1,'Tarea1',2,1),
-		new Tarea(2,'Tarea2',10,2),
-		new Tarea(3,'Tarea3',22,3),
-		new Tarea(4,'Tarea4',45,2)
-	];*/
+	tareas:Tarea[];
 
 	onBorrarClicked(tid: string): void {
         console.log('Borrar tid de la lista:',tid);
@@ -28,7 +22,6 @@ export class TareasComponent{
     }
 
 	constructor(private _TareasService:TareasService, private _ApiService:ApiService){
-		// this.tareas=_TareasService.getTareas();
 
 		_TareasService.getTareasFromApi().subscribe(
 			(tareasfromapi:Tarea[]) => {this.tareas = tareasfromapi;}
