@@ -1,22 +1,19 @@
-<main>
-	<h1>Aplicación de tareas y proyectos</h1>
-	
-	<nav>
-		<ul>
-			<li><a routerLink="/tareas" routerLinkActive="active">Tareas</a></li>
-			<li><a routerLink="/proyectos" routerLinkActive="active">Proyectos</a></li>
-		</ul>
-	</nav>
-	
-	<router-outlet></router-outlet> 
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
 
-	<!-- <shared-comp></shared-comp> -->
-	
+	<header class="mdl-layout__drawer">
+		<span class="mdl-layout-title">TasksApp</span>
+		<nav class="mdl-navigation">
+			<ul>
+				<a class="mdl-navigation__link" routerLink="/" >Home</a>
+				<a class="mdl-navigation__link" routerLink="/tareas" routerLinkActive="active">Tareas</a>
+				<a class="mdl-navigation__link" routerLink="/proyectos" routerLinkActive="active">Proyectos</a>
+			</ul>
+		</nav>
+	</header>
 
-	<!-- <h2>Tareas</h2>
-	<tareas></tareas>
-	
-	<h2>Proyectos</h2>
-	<proyectos></proyectos> -->
-
-</main>
+	<main class="mdl-layout__content">
+		<div class="page-content">
+			<router-outlet></router-outlet> 
+		</div>
+	</main>
+</div>

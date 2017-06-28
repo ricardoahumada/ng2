@@ -1,35 +1,38 @@
-<div>
-	<h3>Lista de tareas</h3>
-	<input [(ngModel)]="textoafiltrar" placeholder="Filtra por descripción"><br><br>
+<div class="mdl-grid center-items">
+	<div class="mdl-cell--12-col">
+		<h3>Lista de tareas</h3>
+	</div>
 	
-	<table>
-		<tr>
-			<td>Id</td>
-			<td>Descripción</td>
-			<td>Duración</td>
-			<td>Proyecto</td>
-			<td>Borrar</td>
-		</tr>
-		<tr *ngFor="let tarea of tareas | listFilter : textoafiltrar:'descripcion'">
-			<td>{{tarea.tid}}</td>
-			<td>{{tarea.descripcion}}</td>
-			<td>{{tarea.tiempo}}</td>
-			<td>{{tarea.proyecto}}</td>
-			<td><boton-borrar [tid]="tarea.tid" (borrarClicked)="onBorrarClicked($event)"></boton-borrar></td>
-			<td><a [routerLink]="['/tareas', tarea.tid]">ver</a></td>
-		</tr>
-	</table>
-	<!-- <div class="row">
-		<h3>Nueva Tarea</h3>
-	    <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
-	        <input type="text" [(ngModel)]="newTask.descripcion" name="descripcion" id="descripcion" #descripcion="ngModel" placeholder="Descripción" required  minlength="3" maxlength="30">
-	        <div [hidden]="descripcion.valid || descripcion.pristine"class="alert alert-danger">Descripción requerida</div>
-	        <br />
-	        <input type="number"  [(ngModel)]="newTask.tiempo" name="tiempo" placeholder="Duración" min="1"/><br />
-	        <input type="number" [(ngModel)]="newTask.proyecto" name="tiempo" placeholder="Proyecto"  min="1"/><br />
-	
-	        <button type="submit" [disabled]="!taskForm.form.valid">Enviar</button>
-	    </form>
-	    <pre>{{newTask|json}}</pre>
-	</div> -->
+	<div class="mdl-cell--12-col">
+		<div class="mdl-textfield mdl-js-textfield">
+			<input class="mdl-textfield__input" id="filtra" [(ngModel)]="textoafiltrar" placeholder="Filtra por descripción">
+			<label class="mdl-textfield__label" for="filtra">Filtra...</label>
+		</div>
+	</div>
+
+	<div class="mdl-cell--12-col">
+		<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Descripción</td>
+					<td>Duración</td>
+					<td>Proyecto</td>
+					<td>Ver</td>
+					<td>Borrar</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let tarea of tareas | listFilter : textoafiltrar:'descripcion'">
+					<td>{{tarea.tid}}</td>
+					<td>{{tarea.descripcion}}</td>
+					<td>{{tarea.tiempo}}</td>
+					<td>{{tarea.proyecto}}</td>
+					<td><a class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" [routerLink]="['/tareas', tarea.tid]"><i class="material-icons">visibility</i></a></td>
+					<td><boton-borrar [tid]="tarea.tid" (borrarClicked)="onBorrarClicked($event)"></boton-borrar></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
 </div>
