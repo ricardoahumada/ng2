@@ -21,6 +21,10 @@ export class TareasComponent{
         }
     }
 
+    clickado(){
+    	alert('clicado!');
+    }
+
 	constructor(private _TareasService:TareasService, private _ApiService:ApiService){
 
 		_TareasService.getTareasFromApi().subscribe(

@@ -24,7 +24,7 @@
 			</thead>
 			<tbody>
 				<tr *ngFor="let tarea of tareas | listFilter : textoafiltrar:'descripcion'">
-					<td>{{tarea.tid}}</td>
+					<td (click)="clickado()">{{tarea.tid}}</td>
 					<td>{{tarea.descripcion}}</td>
 					<td>{{tarea.tiempo}}</td>
 					<td>{{tarea.proyecto}}</td>
