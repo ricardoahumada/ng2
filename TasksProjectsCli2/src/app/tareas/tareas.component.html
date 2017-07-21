@@ -1,0 +1,38 @@
+<div class="mdl-grid center-items">
+	<div class="mdl-cell--12-col">
+		<h3>Lista de tareas</h3>
+	</div>
+	
+	<div class="mdl-cell--12-col">
+		<div class="mdl-textfield mdl-js-textfield">
+			<input class="mdl-textfield__input" id="filtra" [(ngModel)]="textoafiltrar" placeholder="Filtra por descripción">
+			<label class="mdl-textfield__label" for="filtra">Filtra...</label>
+		</div>
+	</div>
+
+	<div class="mdl-cell--12-col">
+		<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Descripción</td>
+					<td>Duración</td>
+					<td>Proyecto</td>
+					<td>Ver</td>
+					<td>Borrar</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let tarea of tareas | listFilter : textoafiltrar:'descripcion'">
+					<td (click)="clickado()">{{tarea.tid}}</td>
+					<td>{{tarea.descripcion}}</td>
+					<td>{{tarea.tiempo}}</td>
+					<td>{{tarea.proyecto}}</td>
+					<td><a class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" [routerLink]="['/tareas', tarea.tid]"><i class="material-icons">visibility</i></a></td>
+					<td><boton-borrar [tid]="tarea.tid" (borrarClicked)="onBorrarClicked($event)"></boton-borrar></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

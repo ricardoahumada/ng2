@@ -1,0 +1,19 @@
+<div class="mdl-grid">
+	<div class="mdl-cell--12-col">
+		<h3>Detalle de tarea</h3>
+	</div>
+
+	<div class="mdl-cell--12-col">
+		<ul *ngIf="_tarea!=null" class="demo-list-item mdl-list">
+			<li class="mdl-list__item"><strong>id: </strong>{{_tarea.tid}}</li>
+			<li class="mdl-list__item"><strong>descripción: </strong>{{_tarea.descripcion}}</li>
+			<li class="mdl-list__item"><strong>duración: </strong>{{_tarea.tiempo}}</li>
+			<li class="mdl-list__item"><strong>proyecto: </strong>{{_tarea.proyecto}}</li>
+		</ul>
+	</div>
+
+	<div class="mdl-cell--12-col">
+		<a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" [routerLink]="['/tareas']">Volver</a>
+	</div>
+
+</div>
