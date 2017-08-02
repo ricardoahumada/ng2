@@ -9,7 +9,6 @@ import { ListFilterPipe } from '../commons/filter.pipe';
   selector: 'tareas',
   templateUrl: './tareas.component.html'
 })
-
 export class TareasComponent{
 	
 	tareas:Tarea[];

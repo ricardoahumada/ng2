@@ -35,5 +35,4 @@ import { routing } from './routing';
   providers:[TareasService],
   bootstrap: [ AppComponent ]
 })
-
 export class AppModule { }
